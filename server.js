@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var db = require("./models");
 
 var PORT = process.env.PORT || 3000;
 
@@ -25,6 +26,14 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
-app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+// app.listen(PORT, function() {
+//   console.log("App now listening at localhost:" + PORT);
+// });
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
