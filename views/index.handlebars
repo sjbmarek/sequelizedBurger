@@ -1,0 +1,64 @@
+  <img src="assets/img/banner2.png" style="height: 200px" class="img-fluid rounded mx-auto d-block m-3"/>
+<div class ="container">  
+  <div class="row col-md-12">
+  </div>
+  <div class ="row">
+    <div class="col-md-4">
+      <h3>Burgers Ready to Eat</h3>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+          <li class="mb-3">
+          {{burger_name}}
+            <button type="button" class="change-eaten btn btn-success btn-sm float-right" data-id="{{id}}" data-neweaten="{{devoured}}" data-toggle="modal" data-target="#nomnom">Eat Now
+            </button>
+          </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class ="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <h3>Burgers Consumed</h3>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+          <li>
+          {{burger_name}}
+          </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class ="col-md-4">
+    </div>
+    <div class ="col-md-4 text-center">
+      <h2>Add a Burger</h2>
+      <form class="create-form">
+       <div class="form-group">
+        <!-- <label for="bu">Burger Name:</label> -->
+        <input type="text" id="bu" name="name" placeholder="ex: Cheeseburger" class="form-control">
+       </div>
+      <button type="submit" class="btn btn-secondary px-5 btn-lg">&nbsp&nbspAdd Burger&nbsp&nbsp</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal html not implemented yet. -->
+<!-- <div class="modal" tabindex="-1" role="dialog" id="nomnom">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>NOM! NOM! NOM!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" class="close">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ -->

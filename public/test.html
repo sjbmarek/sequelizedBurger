@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<title>Burgers!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="/assets/js/burgers.js"></script>
+</head>
+<body style = "background: yellow">
+	<div class ="container">	
+		<h1 class = "text-center">Eat da Burger!</h1>
+		<img src="assets/img/hamburger.png" style="height: 200px" class="mx-auto d-block"/>
+		<div class ="row">
+			<div class="col-md-4">
+				<h3>Burgers ready to eat.</h3>
+				<!-- handlebar stuff -->
+			</div>
+			<div class ="col-md-4">
+			</div>
+			<div class="col-md-4">
+				<h3>Burgers consumed.</h3>
+				<!-- handlebar stuff -->
+			</div>
+		</div>
+		<div class="row">
+			<div class ="col-md-3">
+			</div>
+			<div class ="col-md-6 text-center">
+				<h2>Add a burger</h2>
+				<form class="create-form">
+					 <div class="form-group">
+					    <label for="bu">Burger Name:</label>
+					    <input type="text" id="bu" name="name">
+					 </div>
+  					<button type="submit">Add Burger</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
