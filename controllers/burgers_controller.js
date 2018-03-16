@@ -49,6 +49,8 @@ router.get("/", function(req, res) {
       burger_name: req.body.burger_name,
       devoured: false,
     }).then (function(result) {
+    	console.log("RRRRRRRRRRRRRRRR");
+    	console.log(result);
       // We have access to the new todo as an argument inside of the callback function
       res.json({ id: result.insertId });
     });
@@ -73,7 +75,7 @@ router.get("/", function(req, res) {
 // });
 
 
-  app.put("/api/burgers/:id", function(req, res) {
+ router.put("/api/burgers/:id", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     // var condition = "id = " + req.params.id;
@@ -81,14 +83,18 @@ router.get("/", function(req, res) {
       devoured: req.body.devoured,
     }, {
       where: {
-        id: req.params.id
-      }
-    // }).then(function(dbTodo) {
-    //   res.json(dbTodo);
-    });
+        id: req.params.id},
+      }).then (function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
   });
 
-};
+
 
 
 // Export routes for server.js to use.
